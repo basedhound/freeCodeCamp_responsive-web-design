@@ -45,7 +45,7 @@ Enfin, vous apprendrez comment créer des pages web qui s'adaptent à différent
 1. Learn More About CSS Pseudo Selectors By Building A Balance Sheet
 2. Learn Intermediate CSS by Building a Cat Painting, Not started
 3. Learn Responsive Web Design by Building a Piano
-4.Certification Technical Documentation Page
+4. (Certification) Technical Documentation Page
 ```
 
 ### Module 4
