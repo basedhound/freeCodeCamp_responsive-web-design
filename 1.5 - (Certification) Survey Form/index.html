@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Survey Form</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1 class="title">Survey Form</h1>
+
+    <p class="description">Please fill out the survey form below:</p>
+
+    <form id="survey-form" action="#" method="post">
+
+      <label for="name" id="name-label">Name:</label>
+      <input type="text" id="name" name="name" class="input-field" placeholder="Enter your name" required>
+
+      <label for="email" id="email-label">Email:</label>
+      <input type="email" id="email" name="email" class="input-field" placeholder="Enter your email" required>
+
+      <label for="number" id="number-label">Number:</label>
+      <input type="number" id="number" name="number" class="input-field" placeholder="Enter a number" min="1" max="100"
+        required>
+
+      <label for="dropdown" id="dropdown-label">Select an option:</label>
+      <select id="dropdown" name="dropdown" class="input-field" required>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+      </select>
+
+      <label class="radio-label">Choose an option:</label>
+      <input type="radio" id="radio1" name="radioGroup" value="option1" class="radio-input" required>
+      <label for="radio1">Option 1</label>
+      <input type="radio" id="radio2" name="radioGroup" value="option2" class="radio-input" required>
+      <label for="radio2">Option 2</label>
+
+      <label class="checkbox-label">Select several options:</label>
+      <input type="checkbox" id="checkbox1" name="checkboxGroup" value="option1" class="checkbox-input">
+      <label for="checkbox1">Option 1</label>
+      <input type="checkbox" id="checkbox2" name="checkboxGroup" value="option2" class="checkbox-input">
+      <label for="checkbox2">Option 2</label>
+
+      <label for="comments" id="comments-label">Additional Comments:</label>
+      <textarea class="comments-area" id="comments" name="comments" class="input-field"
+        placeholder="Enter your comments"></textarea>
+
+      <button type="submit" id="submit" class="submit-button">Submit</button>
+
+    </form>
+  </div>
+
+</body>
+
+</html>
