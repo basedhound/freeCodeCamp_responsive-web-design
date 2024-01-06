@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    background-color: #333;
+    padding: 20px;
+    color: white;
+    z-index: 1000; /* Ensure the navbar is above other elements */
+}
+
+#navbar header {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.main-section {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.main-section header {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Add your additional styles for content, code, and lists within .main-section here */
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    #navbar {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .main-section {
+        margin-left: 0;
+    }
+}
