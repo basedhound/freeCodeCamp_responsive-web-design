@@ -1,0 +1,79 @@
+/* Navbar Styles */
+
+* {
+   font-family: "Roboto", sans-serif
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#navbar ul li {
+  margin-right: 20px;
+}
+
+#navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Welcome Section Styles */
+#welcome-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+/* Projects Section Styles */
+#projects {
+  padding: 50px;
+}
+
+.project-tile {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Profile Link Styles */
+#profile-link {
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  #navbar ul li {
+    margin-right: 10px;
+  }
+
+  #welcome-section {
+    height: 50vh;
+  }
+
+  .project-tile {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  #profile-link {
+    margin-top: 20px;
+  }
+}
