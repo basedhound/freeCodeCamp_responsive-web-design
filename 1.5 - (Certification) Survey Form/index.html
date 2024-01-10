@@ -4,55 +4,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration Form</title>
   <link rel="stylesheet" href="styles.css">
-  <title>Survey Form</title>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1 class="title">Survey Form</h1>
+  <h1 id="title">Event Registration Form</h1>
 
-    <p class="description">Please fill out the survey form below:</p>
+  <p id="description">Please fill out the form below to register for the event.</>
 
-    <form id="survey-form" action="#" method="post">
+    <form action="#" method="post" id="survey-form">
 
-      <label for="name" id="name-label">Name:</label>
-      <input type="text" id="name" name="name" class="input-field" placeholder="Enter your name" required>
+      <!-- Personal Information -->
+      <label for="name" id="name-label">Full Name</label>
+      <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
 
-      <label for="email" id="email-label">Email:</label>
-      <input type="email" id="email" name="email" class="input-field" placeholder="Enter your email" required>
+        <label for="number">Your age : <input id="number" type="number" name="age" min="18" max="120" placeholder="18"  /></label>
 
-      <label for="number" id="number-label">Number:</label>
-      <input type="number" id="number" name="number" class="input-field" placeholder="Enter a number" min="1" max="100"
-        required>
+      <label for="email" id="email-label">Email</label>
+      <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
 
-      <label for="dropdown" id="dropdown-label">Select an option:</label>
-      <select id="dropdown" name="dropdown" class="input-field" required>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
+      <label for="phone-number" id="number-label">Phone Number</label>
+      <input type="text" id="phone-number" name="phoneNumber" class="form-input" placeholder="Enter your phone number" min="6"
+        max="14" required>
+
+      <!-- Type of Participation -->
+      <fieldset>
+        <h2>Type of Participation</h2>
+        <label for="participant">
+          <input type="radio" id="participant" name="participationType" value="participant" class="form-radio"
+            required>Participant</label>
+        <label for="volunteer">
+          <input type="radio" id="volunteer" name="participationType" value="volunteer" class="form-radio"
+            required>Volunteer</label>
+      </fieldset>
+
+      <!-- Preferences -->
+      <fieldset>
+        <h2>Dietary Preferences</h2>
+        <label for="vegetarian">
+          <input type="checkbox" id="vegetarian" name="dietaryPreference" value="vegetarian"
+            class="form-checkbox">Vegetarian</label>
+        <label for="vegan">
+          <input type="checkbox" id="vegan" name="dietaryPreference" value="vegan" class="form-checkbox">Vegan</label>
+        <label for="glutenFree">
+          <input type="checkbox" id="glutenFree" name="dietaryPreference" value="glutenFree"
+            class="form-checkbox">Gluten-free</label>
+        <label for="noRestrictions">
+          <input type="checkbox" id="noRestrictions" name="dietaryPreference" value="noRestrictions"
+            class="form-checkbox">No dietary restrictions</label>
+      </fieldset>
+
+      <!-- Transportation -->
+      <fieldset>
+        <h2>Transportation</h2>
+        <label for="personalVehicle">
+          <input type="radio" id="personalVehicle" name="transportation" value="personalVehicle" class="form-radio"
+            required>Personal vehicle</label>
+        <label for="publicTransport">
+          <input type="radio" id="publicTransport" name="transportation" value="publicTransport" class="form-radio"
+            required>Public transportation</label>
+        <label for="carpooling">
+          <input type="radio" id="carpooling" name="transportation" value="carpooling" class="form-radio"
+            required>Event-organized carpooling</label>
+      </fieldset>
+
+      <!-- Workshops or Conferences -->
+      <label for="workshops" class="subtitle">Workshops or Conferences:</label>
+      <select id="dropdown" name="workshops" class="form-select" required>
+        <option value="workshopA">Workshop A</option>
+        <option value="workshopB">Workshop B</option>
+        <option value="mainConference">Main Conference</option>
+        <option value="noPreference">No preference</option>
       </select>
 
-      <label class="radio-label">Choose an option:</label>
-      <input type="radio" id="radio1" name="radioGroup" value="option1" class="radio-input" required>
-      <label for="radio1">Option 1</label>
-      <input type="radio" id="radio2" name="radioGroup" value="option2" class="radio-input" required>
-      <label for="radio2">Option 2</label>
+      <!-- How did you hear about the event? -->
+      <label for="heardAbout" class="subtitle">How did you hear about the event?</label>
+      <select id="heardAbout" name="heardAbout" class="form-select">
+        <option value="socialMedia">Social Media</option>
+        <option value="wordOfMouth">Word of Mouth</option>
+        <option value="onlineAdvertising">Online Advertising</option>
+        <option value="postersFlyers">Posters/Flyers</option>
+        <option value="other">Other</option>
+      </select>
 
-      <label class="checkbox-label">Select several options:</label>
-      <input type="checkbox" id="checkbox1" name="checkboxGroup" value="option1" class="checkbox-input">
-      <label for="checkbox1">Option 1</label>
-      <input type="checkbox" id="checkbox2" name="checkboxGroup" value="option2" class="checkbox-input">
-      <label for="checkbox2">Option 2</label>
+      <!-- Comments or Special Requests -->
+      <label for="comments" class="subtitle">Comments or Special Requests:</label>
+      <textarea id="comments" name="comments" class="form-textarea" rows="7" cols="50"></textarea>
 
-      <label for="comments" id="comments-label">Additional Comments:</label>
-      <textarea class="comments-area" id="comments" name="comments" class="input-field"
-        placeholder="Enter your comments"></textarea>
+      <!-- Acceptance of Terms -->
+      <label for="acceptTerms">
+        <input type="checkbox" value="acceptTerms" id="acceptTerms" name="acceptTerms" class="form-checkbox" required>I
+        accept the general <a href="">terms and conditions</a> of event registration.</label>
 
-      <button type="submit" id="submit" class="submit-button">Submit</button>
+      <!-- Submission Button -->
+      <input type="submit" value="Register" class="form-submit" id="submit">
 
     </form>
-  </div>
 
 </body>
 
