@@ -5,65 +5,711 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Technical Documentation</title>
+  <title>Vite Guide</title>
 </head>
 
 <body>
   <nav id="navbar">
-    <header>Technical Documentation</header>
-    <a class="nav-link" href="#Introduction">Introduction</a>
-    <a class="nav-link" href="#JavaScript_and_Java">JavaScript and Java</a>
-    <a class="nav-link" href="#HTML">HTML</a>
-    <a class="nav-link" href="#CSS">CSS</a>
-    <a class="nav-link" href="#Responsive_Design">Responsive Design</a>
+    <header>Vite ~</header>
+    <div>
+      <a class="nav-link" href="#why_vite">Why Vite</a>
+      <a class="nav-link" href="#getting_started">Getting Started</a>
+      <a class="nav-link" href="#features">Features</a>
+      <a class="nav-link" href="#cli">CLI</a>
+      <a class="nav-link" href="#using_plugins">Using Plugins</a>
+    </div>
   </nav>
 
   <main id="main-doc">
-    <section id="Introduction" class="main-section">
-      <header>Introduction</header>
-      <p>Paragraph 1</p>
-      <p>Paragraph 2</p>
-      <p>Paragraph 3</p>
-      <p>Paragraph 4</p>
-      <p>Paragraph 5</p>
-      <p>Paragraph 6</p>
-      <p>Paragraph 7</p>
-      <p>Paragraph 8</p>
-      <p>Paragraph 9</p>
-      <p>Paragraph 10</p>
-      <code>Code 1</code>
-      <code>Code 2</code>
-      <code>Code 3</code>
-      <code>Code 4</code>
-      <code>Code 5</code>
-      <li>List item 1</li>
-      <li>List item 2</li>
-      <li>List item 3</li>
-      <li>List item 4</li>
-      <li>List item 5</li>
+    <section id="why_vite" class="main-section">
+      <!-- SECTION 1 -->
+      <header>Why Vite</header>
+      <h2>Overview</h2>
+      <p>Vite (French word for "quick", pronounced /vit/, like "veet") is a build tool that aims to provide a faster and
+        leaner
+        development experience for modern web projects. It consists of two major parts:
+
+      <ul>
+        <li>
+          A dev server that provides rich feature enhancements over native ES modules, for example extremely fast Hot
+          Module
+          Replacement (HMR).
+        </li>
+        <li>
+          A build command that bundles your code with Rollup, pre-configured to output highly optimized static assets
+          for
+          production.
+        </li>
+      </ul>
+
+      Vite is opinionated and comes with sensible defaults out of the box. Read about what's possible in the Features
+      Guide.
+      Support for frameworks or integration with other tools is possible through Plugins. The Config Section explains
+      how to
+      adapt Vite to your project if needed.
+
+      Vite is also highly extensible via its Plugin API and JavaScript API with full typing support.
+
+      You can learn more about the rationale behind the project in the Why Vite section.</p>
+
+      <h2>Browser Support</h2>
+      <p>During development, Vite sets esnext as the transform target, because we assume a modern browser is used and it
+        supports
+        all of the latest JavaScript and CSS features. This prevents syntax lowering, letting Vite serve modules as
+        close as
+        possible to the original source code.
+
+        For the production build, by default Vite targets browsers that support native ES Modules, native ESM dynamic
+        import,
+        and import.meta. Legacy browsers can be supported via the official @vitejs/plugin-legacy. See the Building for
+        Production section for more details.</p>
+
+      <h2>Trying Vite Online</h2>
+      <p>You can try Vite online on StackBlitz. It runs the Vite-based build setup directly in the browser, so it is
+        almost
+        identical to the local setup but doesn't require installing anything on your machine. You can navigate to
+        vite.new/{template} to select which framework to use.
+      </p>
+
+      <h3>The supported template presets are:</h3>
+
+      <ul>
+        <li>Vanilla</li>
+        <li>Vue</li>
+        <li>React</li>
+        <li>Preact</li>
+        <li>Lit</li>
+        <li>Svelte</li>
+        <li>Solid</li>
+        <li>Gwik</li>
+      </ul>
+
+
+      <h2>Scaffolding Your First Vite Project</h2>
+
+      <code>$ npm create vite@latest</code>
+
+      <p>Then follow the prompts!
+        You can also directly specify the project name and the template you want to use via additional command line
+        options. For
+        example, to scaffold a Vite + Vue project, run:
+      </p>
+
+      <code># npm 7+, extra double-dash is needed: <br>
+        npm create vite@latest my-vue-app -- --template vue <br><br>
+        
+        # yarn<br>
+        yarn create vite my-vue-app --template vue<br><br>
+        
+        # pnpm<br>
+        pnpm create vite my-vue-app --template vue<br><br>
+        
+        # bun<br>
+        bunx create-vite my-vue-app --template vue</code>
+
+      <h2>Community Templates</h2>
+      <p>create-vite is a tool to quickly start a project from a basic template for popular frameworks. Check out
+        Awesome Vite
+        for community maintained templates that include other tools or target different frameworks.
+
+        For a template at https://github.com/user/project, you can try it out online using
+        https://github.stackblitz.com/user/project (adding .stackblitz after github to the URL of the project).
+
+        You can also use a tool like degit to scaffold your project with one of the templates. Assuming the project is
+        on GitHub
+        and uses main as the default branch, you can create a local copy using:</p>
+
+      <code>npx degit user/project#main my-project <br>
+      cd my-project<br><br>
+      
+      npm install<br>
+      npm run dev</code>
+
+      <h2>Command Line Interface</h2>
+      <p>In a project where Vite is installed, you can use the vite binary in your npm scripts, or run it directly with
+        npx vite.
+        Here are the default npm scripts in a scaffolded Vite project:</p>
+
+      <code>{<br>
+"scripts": {<br>
+"dev": "vite", // start dev server, aliases: `vite dev`, `vite serve`<br>
+"build": "vite build", // build for production<br>
+"preview": "vite preview" // locally preview production build<br>
+}<br>
+}</code>
+
+      <p>You can specify additional CLI options like --port or --open. For a full list of CLI options, run npx vite
+        --help in
+        your project.</p>
+
+      <h2>Using Unreleased Commits</h2>
+      <p>If you can't wait for a new release to test the latest features, you will need to clone the vite repo to your
+        local
+        machine and then build and link it yourself (pnpm is required):</p>
+
+      <code>git clone https://github.com/vitejs/vite.git <br>
+cd vite<br>
+pnpm install<br>
+cd packages/vite<br>
+pnpm run build<br>
+pnpm link --global # use your preferred package manager for this step</code>
+
+      <p>Then go to your Vite based project and run pnpm link --global vite (or the package manager that you used to
+        link vite
+        globally). Now restart the development server to ride on the bleeding edge!</p>
     </section>
 
-    <!-- Repeat the structure for other sections as needed -->
+    <!-- SECTION 2 -->
+    <section id="getting_started" class="main-section">
+      <header>Getting Started</header>
+      <h2>Overview</h2>
+      <p>Vite (French word for "quick", pronounced /vit/, like "veet") is a build tool that aims to provide a faster and
+        leaner
+        development experience for modern web projects. It consists of two major parts:
 
-    <!-- Ensure you have at least five main-section elements within #main-doc -->
-    <section id="JavaScript_and_Java" class="main-section">
-      <header>JavaScript and Java</header>
-      <!-- Content goes here -->
+      <ul>
+        <li>
+          A dev server that provides rich feature enhancements over native ES modules, for example extremely fast Hot
+          Module
+          Replacement (HMR).
+        </li>
+        <li>
+          A build command that bundles your code with Rollup, pre-configured to output highly optimized static assets
+          for
+          production.
+        </li>
+      </ul>
+
+      Vite is opinionated and comes with sensible defaults out of the box. Read about what's possible in the Features
+      Guide.
+      Support for frameworks or integration with other tools is possible through Plugins. The Config Section explains
+      how to
+      adapt Vite to your project if needed.
+
+      Vite is also highly extensible via its Plugin API and JavaScript API with full typing support.
+
+      You can learn more about the rationale behind the project in the Why Vite section.</p>
+
+      <h2>Browser Support</h2>
+      <p>During development, Vite sets esnext as the transform target, because we assume a modern browser is used and it
+        supports
+        all of the latest JavaScript and CSS features. This prevents syntax lowering, letting Vite serve modules as
+        close as
+        possible to the original source code.
+
+        For the production build, by default Vite targets browsers that support native ES Modules, native ESM dynamic
+        import,
+        and import.meta. Legacy browsers can be supported via the official @vitejs/plugin-legacy. See the Building for
+        Production section for more details.</p>
+
+      <h2>Trying Vite Online</h2>
+      <p>You can try Vite online on StackBlitz. It runs the Vite-based build setup directly in the browser, so it is
+        almost
+        identical to the local setup but doesn't require installing anything on your machine. You can navigate to
+        vite.new/{template} to select which framework to use.
+      </p>
+
+      <h3>The supported template presets are:</h3>
+
+      <ul>
+        <li>Vanilla</li>
+        <li>Vue</li>
+        <li>React</li>
+        <li>Preact</li>
+        <li>Lit</li>
+        <li>Svelte</li>
+        <li>Solid</li>
+        <li>Gwik</li>
+      </ul>
+
+
+      <h2>Scaffolding Your First Vite Project</h2>
+
+      <code>$ npm create vite@latest</code>
+
+      <p>Then follow the prompts!
+        You can also directly specify the project name and the template you want to use via additional command line
+        options. For
+        example, to scaffold a Vite + Vue project, run:
+      </p>
+
+      <code># npm 7+, extra double-dash is needed: <br>
+              npm create vite@latest my-vue-app -- --template vue <br><br>
+              
+              # yarn<br>
+              yarn create vite my-vue-app --template vue<br><br>
+              
+              # pnpm<br>
+              pnpm create vite my-vue-app --template vue<br><br>
+              
+              # bun<br>
+              bunx create-vite my-vue-app --template vue</code>
+
+      <h2>Community Templates</h2>
+      <p>create-vite is a tool to quickly start a project from a basic template for popular frameworks. Check out
+        Awesome Vite
+        for community maintained templates that include other tools or target different frameworks.
+
+        For a template at https://github.com/user/project, you can try it out online using
+        https://github.stackblitz.com/user/project (adding .stackblitz after github to the URL of the project).
+
+        You can also use a tool like degit to scaffold your project with one of the templates. Assuming the project is
+        on GitHub
+        and uses main as the default branch, you can create a local copy using:</p>
+
+      <code>npx degit user/project#main my-project <br>
+            cd my-project<br><br>
+            
+            npm install<br>
+            npm run dev</code>
+
+      <h2>Command Line Interface</h2>
+      <p>In a project where Vite is installed, you can use the vite binary in your npm scripts, or run it directly with
+        npx vite.
+        Here are the default npm scripts in a scaffolded Vite project:</p>
+
+      <code>{<br>
+      "scripts": {<br>
+      "dev": "vite", // start dev server, aliases: `vite dev`, `vite serve`<br>
+      "build": "vite build", // build for production<br>
+      "preview": "vite preview" // locally preview production build<br>
+      }<br>
+      }</code>
+
+      <p>You can specify additional CLI options like --port or --open. For a full list of CLI options, run npx vite
+        --help in
+        your project.</p>
+
+      <h2>Using Unreleased Commits</h2>
+      <p>If you can't wait for a new release to test the latest features, you will need to clone the vite repo to your
+        local
+        machine and then build and link it yourself (pnpm is required):</p>
+
+      <code>git clone https://github.com/vitejs/vite.git <br>
+      cd vite<br>
+      pnpm install<br>
+      cd packages/vite<br>
+      pnpm run build<br>
+      pnpm link --global # use your preferred package manager for this step</code>
+
+      <p>Then go to your Vite based project and run pnpm link --global vite (or the package manager that you used to
+        link vite
+        globally). Now restart the development server to ride on the bleeding edge!</p>
     </section>
 
-    <section id="HTML" class="main-section">
-      <header>HTML</header>
-      <!-- Content goes here -->
+    <!-- SECTION 3 -->
+    <section id="features" class="main-section">
+      <header>Features</header>
+      <h2>Overview</h2>
+      <p>Vite (French word for "quick", pronounced /vit/, like "veet") is a build tool that aims to provide a faster and
+        leaner
+        development experience for modern web projects. It consists of two major parts:
+
+      <ul>
+        <li>
+          A dev server that provides rich feature enhancements over native ES modules, for example extremely fast Hot
+          Module
+          Replacement (HMR).
+        </li>
+        <li>
+          A build command that bundles your code with Rollup, pre-configured to output highly optimized static assets
+          for
+          production.
+        </li>
+      </ul>
+
+      Vite is opinionated and comes with sensible defaults out of the box. Read about what's possible in the Features
+      Guide.
+      Support for frameworks or integration with other tools is possible through Plugins. The Config Section explains
+      how to
+      adapt Vite to your project if needed.
+
+      Vite is also highly extensible via its Plugin API and JavaScript API with full typing support.
+
+      You can learn more about the rationale behind the project in the Why Vite section.</p>
+
+      <h2>Browser Support</h2>
+      <p>During development, Vite sets esnext as the transform target, because we assume a modern browser is used and it
+        supports
+        all of the latest JavaScript and CSS features. This prevents syntax lowering, letting Vite serve modules as
+        close as
+        possible to the original source code.
+
+        For the production build, by default Vite targets browsers that support native ES Modules, native ESM dynamic
+        import,
+        and import.meta. Legacy browsers can be supported via the official @vitejs/plugin-legacy. See the Building for
+        Production section for more details.</p>
+
+      <h2>Trying Vite Online</h2>
+      <p>You can try Vite online on StackBlitz. It runs the Vite-based build setup directly in the browser, so it is
+        almost
+        identical to the local setup but doesn't require installing anything on your machine. You can navigate to
+        vite.new/{template} to select which framework to use.
+      </p>
+
+      <h3>The supported template presets are:</h3>
+
+      <ul>
+        <li>Vanilla</li>
+        <li>Vue</li>
+        <li>React</li>
+        <li>Preact</li>
+        <li>Lit</li>
+        <li>Svelte</li>
+        <li>Solid</li>
+        <li>Gwik</li>
+      </ul>
+
+
+      <h2>Scaffolding Your First Vite Project</h2>
+
+      <code>$ npm create vite@latest</code>
+
+      <p>Then follow the prompts!
+        You can also directly specify the project name and the template you want to use via additional command line
+        options. For
+        example, to scaffold a Vite + Vue project, run:
+      </p>
+
+      <code># npm 7+, extra double-dash is needed: <br>
+              npm create vite@latest my-vue-app -- --template vue <br><br>
+              
+              # yarn<br>
+              yarn create vite my-vue-app --template vue<br><br>
+              
+              # pnpm<br>
+              pnpm create vite my-vue-app --template vue<br><br>
+              
+              # bun<br>
+              bunx create-vite my-vue-app --template vue</code>
+
+      <h2>Community Templates</h2>
+      <p>create-vite is a tool to quickly start a project from a basic template for popular frameworks. Check out
+        Awesome Vite
+        for community maintained templates that include other tools or target different frameworks.
+
+        For a template at https://github.com/user/project, you can try it out online using
+        https://github.stackblitz.com/user/project (adding .stackblitz after github to the URL of the project).
+
+        You can also use a tool like degit to scaffold your project with one of the templates. Assuming the project is
+        on GitHub
+        and uses main as the default branch, you can create a local copy using:</p>
+
+      <code>npx degit user/project#main my-project <br>
+            cd my-project<br><br>
+            
+            npm install<br>
+            npm run dev</code>
+
+      <h2>Command Line Interface</h2>
+      <p>In a project where Vite is installed, you can use the vite binary in your npm scripts, or run it directly with
+        npx vite.
+        Here are the default npm scripts in a scaffolded Vite project:</p>
+
+      <code>{<br>
+      "scripts": {<br>
+      "dev": "vite", // start dev server, aliases: `vite dev`, `vite serve`<br>
+      "build": "vite build", // build for production<br>
+      "preview": "vite preview" // locally preview production build<br>
+      }<br>
+      }</code>
+
+      <p>You can specify additional CLI options like --port or --open. For a full list of CLI options, run npx vite
+        --help in
+        your project.</p>
+
+      <h2>Using Unreleased Commits</h2>
+      <p>If you can't wait for a new release to test the latest features, you will need to clone the vite repo to your
+        local
+        machine and then build and link it yourself (pnpm is required):</p>
+
+      <code>git clone https://github.com/vitejs/vite.git <br>
+      cd vite<br>
+      pnpm install<br>
+      cd packages/vite<br>
+      pnpm run build<br>
+      pnpm link --global # use your preferred package manager for this step</code>
+
+      <p>Then go to your Vite based project and run pnpm link --global vite (or the package manager that you used to
+        link vite
+        globally). Now restart the development server to ride on the bleeding edge!</p>
+
     </section>
 
-    <section id="CSS" class="main-section">
-      <header>CSS</header>
-      <!-- Content goes here -->
+    <!-- SECTION 4 -->
+    <section id="cli" class="main-section">
+      <header>CLI</header>
+      <h2>Overview</h2>
+      <p>Vite (French word for "quick", pronounced /vit/, like "veet") is a build tool that aims to provide a faster and
+        leaner
+        development experience for modern web projects. It consists of two major parts:
+
+      <ul>
+        <li>
+          A dev server that provides rich feature enhancements over native ES modules, for example extremely fast Hot
+          Module
+          Replacement (HMR).
+        </li>
+        <li>
+          A build command that bundles your code with Rollup, pre-configured to output highly optimized static assets
+          for
+          production.
+        </li>
+      </ul>
+
+      Vite is opinionated and comes with sensible defaults out of the box. Read about what's possible in the Features
+      Guide.
+      Support for frameworks or integration with other tools is possible through Plugins. The Config Section explains
+      how to
+      adapt Vite to your project if needed.
+
+      Vite is also highly extensible via its Plugin API and JavaScript API with full typing support.
+
+      You can learn more about the rationale behind the project in the Why Vite section.</p>
+
+      <h2>Browser Support</h2>
+      <p>During development, Vite sets esnext as the transform target, because we assume a modern browser is used and it
+        supports
+        all of the latest JavaScript and CSS features. This prevents syntax lowering, letting Vite serve modules as
+        close as
+        possible to the original source code.
+
+        For the production build, by default Vite targets browsers that support native ES Modules, native ESM dynamic
+        import,
+        and import.meta. Legacy browsers can be supported via the official @vitejs/plugin-legacy. See the Building for
+        Production section for more details.</p>
+
+      <h2>Trying Vite Online</h2>
+      <p>You can try Vite online on StackBlitz. It runs the Vite-based build setup directly in the browser, so it is
+        almost
+        identical to the local setup but doesn't require installing anything on your machine. You can navigate to
+        vite.new/{template} to select which framework to use.
+      </p>
+
+      <h3>The supported template presets are:</h3>
+
+      <ul>
+        <li>Vanilla</li>
+        <li>Vue</li>
+        <li>React</li>
+        <li>Preact</li>
+        <li>Lit</li>
+        <li>Svelte</li>
+        <li>Solid</li>
+        <li>Gwik</li>
+      </ul>
+
+
+      <h2>Scaffolding Your First Vite Project</h2>
+
+      <code>$ npm create vite@latest</code>
+
+      <p>Then follow the prompts!
+        You can also directly specify the project name and the template you want to use via additional command line
+        options. For
+        example, to scaffold a Vite + Vue project, run:
+      </p>
+
+      <code># npm 7+, extra double-dash is needed: <br>
+            npm create vite@latest my-vue-app -- --template vue <br><br>
+            
+            # yarn<br>
+            yarn create vite my-vue-app --template vue<br><br>
+            
+            # pnpm<br>
+            pnpm create vite my-vue-app --template vue<br><br>
+            
+            # bun<br>
+            bunx create-vite my-vue-app --template vue</code>
+
+      <h2>Community Templates</h2>
+      <p>create-vite is a tool to quickly start a project from a basic template for popular frameworks. Check out
+        Awesome Vite
+        for community maintained templates that include other tools or target different frameworks.
+
+        For a template at https://github.com/user/project, you can try it out online using
+        https://github.stackblitz.com/user/project (adding .stackblitz after github to the URL of the project).
+
+        You can also use a tool like degit to scaffold your project with one of the templates. Assuming the project is
+        on GitHub
+        and uses main as the default branch, you can create a local copy using:</p>
+
+      <code>npx degit user/project#main my-project <br>
+          cd my-project<br><br>
+          
+          npm install<br>
+          npm run dev</code>
+
+      <h2>Command Line Interface</h2>
+      <p>In a project where Vite is installed, you can use the vite binary in your npm scripts, or run it directly with
+        npx vite.
+        Here are the default npm scripts in a scaffolded Vite project:</p>
+
+      <code>{<br>
+    "scripts": {<br>
+    "dev": "vite", // start dev server, aliases: `vite dev`, `vite serve`<br>
+    "build": "vite build", // build for production<br>
+    "preview": "vite preview" // locally preview production build<br>
+    }<br>
+    }</code>
+
+      <p>You can specify additional CLI options like --port or --open. For a full list of CLI options, run npx vite
+        --help in
+        your project.</p>
+
+      <h2>Using Unreleased Commits</h2>
+      <p>If you can't wait for a new release to test the latest features, you will need to clone the vite repo to your
+        local
+        machine and then build and link it yourself (pnpm is required):</p>
+
+      <code>git clone https://github.com/vitejs/vite.git <br>
+    cd vite<br>
+    pnpm install<br>
+    cd packages/vite<br>
+    pnpm run build<br>
+    pnpm link --global # use your preferred package manager for this step</code>
+
+      <p>Then go to your Vite based project and run pnpm link --global vite (or the package manager that you used to
+        link vite
+        globally). Now restart the development server to ride on the bleeding edge!</p>
     </section>
 
-    <section id="Responsive_Design" class="main-section">
-      <header>Responsive Design</header>
-      <!-- Content goes here -->
+    <!-- SECTION 5 -->
+    <section id="using_plugins" class="main-section">
+      <header>Using Plugins</header>
+      <h2>Overview</h2>
+      <p>Vite (French word for "quick", pronounced /vit/, like "veet") is a build tool that aims to provide a faster and
+        leaner
+        development experience for modern web projects. It consists of two major parts:
+
+      <ul>
+        <li>
+          A dev server that provides rich feature enhancements over native ES modules, for example extremely fast Hot
+          Module
+          Replacement (HMR).
+        </li>
+        <li>
+          A build command that bundles your code with Rollup, pre-configured to output highly optimized static assets
+          for
+          production.
+        </li>
+      </ul>
+
+      Vite is opinionated and comes with sensible defaults out of the box. Read about what's possible in the Features
+      Guide.
+      Support for frameworks or integration with other tools is possible through Plugins. The Config Section explains
+      how to
+      adapt Vite to your project if needed.
+
+      Vite is also highly extensible via its Plugin API and JavaScript API with full typing support.
+
+      You can learn more about the rationale behind the project in the Why Vite section.</p>
+
+      <h2>Browser Support</h2>
+      <p>During development, Vite sets esnext as the transform target, because we assume a modern browser is used and it
+        supports
+        all of the latest JavaScript and CSS features. This prevents syntax lowering, letting Vite serve modules as
+        close as
+        possible to the original source code.
+
+        For the production build, by default Vite targets browsers that support native ES Modules, native ESM dynamic
+        import,
+        and import.meta. Legacy browsers can be supported via the official @vitejs/plugin-legacy. See the Building for
+        Production section for more details.</p>
+
+      <h2>Trying Vite Online</h2>
+      <p>You can try Vite online on StackBlitz. It runs the Vite-based build setup directly in the browser, so it is
+        almost
+        identical to the local setup but doesn't require installing anything on your machine. You can navigate to
+        vite.new/{template} to select which framework to use.
+      </p>
+
+      <h3>The supported template presets are:</h3>
+
+      <ul>
+        <li>Vanilla</li>
+        <li>Vue</li>
+        <li>React</li>
+        <li>Preact</li>
+        <li>Lit</li>
+        <li>Svelte</li>
+        <li>Solid</li>
+        <li>Gwik</li>
+      </ul>
+
+
+      <h2>Scaffolding Your First Vite Project</h2>
+
+      <code>$ npm create vite@latest</code>
+
+      <p>Then follow the prompts!
+        You can also directly specify the project name and the template you want to use via additional command line
+        options. For
+        example, to scaffold a Vite + Vue project, run:
+      </p>
+
+      <code># npm 7+, extra double-dash is needed: <br>
+          npm create vite@latest my-vue-app -- --template vue <br><br>
+          
+          # yarn<br>
+          yarn create vite my-vue-app --template vue<br><br>
+          
+          # pnpm<br>
+          pnpm create vite my-vue-app --template vue<br><br>
+          
+          # bun<br>
+          bunx create-vite my-vue-app --template vue</code>
+
+      <h2>Community Templates</h2>
+      <p>create-vite is a tool to quickly start a project from a basic template for popular frameworks. Check out
+        Awesome Vite
+        for community maintained templates that include other tools or target different frameworks.
+
+        For a template at https://github.com/user/project, you can try it out online using
+        https://github.stackblitz.com/user/project (adding .stackblitz after github to the URL of the project).
+
+        You can also use a tool like degit to scaffold your project with one of the templates. Assuming the project is
+        on GitHub
+        and uses main as the default branch, you can create a local copy using:</p>
+
+      <code>npx degit user/project#main my-project <br>
+        cd my-project<br><br>
+        
+        npm install<br>
+        npm run dev</code>
+
+      <h2>Command Line Interface</h2>
+      <p>In a project where Vite is installed, you can use the vite binary in your npm scripts, or run it directly with
+        npx vite.
+        Here are the default npm scripts in a scaffolded Vite project:</p>
+
+      <code>{<br>
+  "scripts": {<br>
+  "dev": "vite", // start dev server, aliases: `vite dev`, `vite serve`<br>
+  "build": "vite build", // build for production<br>
+  "preview": "vite preview" // locally preview production build<br>
+  }<br>
+  }</code>
+
+      <p>You can specify additional CLI options like --port or --open. For a full list of CLI options, run npx vite
+        --help in
+        your project.</p>
+
+      <h2>Using Unreleased Commits</h2>
+      <p>If you can't wait for a new release to test the latest features, you will need to clone the vite repo to your
+        local
+        machine and then build and link it yourself (pnpm is required):</p>
+
+      <code>git clone https://github.com/vitejs/vite.git <br>
+  cd vite<br>
+  pnpm install<br>
+  cd packages/vite<br>
+  pnpm run build<br>
+  pnpm link --global # use your preferred package manager for this step</code>
+
+      <p>Then go to your Vite based project and run pnpm link --global vite (or the package manager that you used to
+        link vite
+        globally). Now restart the development server to ride on the bleeding edge!</p>
     </section>
   </main>
 </body>
