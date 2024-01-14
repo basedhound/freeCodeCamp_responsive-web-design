@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2em;
   color: white;
   padding: 3rem;
   background-color: #310e68;
@@ -17,11 +17,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  max-width: 1000px;
+  padding: 1rem;
+  max-width: 1200px;
   margin: 0 auto;
   background-color: #3c4048;
   border-radius: 1rem;
-  padding: 3rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -31,7 +31,7 @@ body {
   color: whitesmoke;
   text-align: center;
   font-size: 7rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
   background-clip: text;
   color: transparent;
   background-image: linear-gradient(to right, #bc4e9c, #f80759);
@@ -107,6 +107,7 @@ h3:hover {
 
 .tribute-p {
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 ul {
@@ -129,8 +130,11 @@ a {
 /* Mediaqueries */
 
 @media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
   #main {
-    padding: 2rem;
+    padding: 1rem;
   }
   #title {
     font-size: 5rem;
@@ -140,11 +144,8 @@ a {
   }
 }
 @media screen and (max-width: 480px) {
-  body {
-    padding: 1rem;
-  }
   #main {
-    padding: 1rem;
+    padding: 0.5rem;
   }
   #title {
     font-size: 3rem;

@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 html {
@@ -11,7 +11,6 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
   color: white;
   display: flex;
   flex: row;
@@ -19,13 +18,14 @@ body {
 }
 
 #navbar {
+  position: fixed;
   overflow: hidden;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: #333;
   color: #fff;
   width: 20%;
-  max-width: 300px;
   padding: 1.5rem;
   background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -48,22 +48,25 @@ body {
   text-decoration: none;
   color: #f0f0f0;
   font-size: 1rem;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
 }
 
 #navbar a:hover {
   color: #fff;
-  font-weight: 600;
+  border-bottom: 1px solid #fff;
 }
 
 main {
   display: flex;
   flex-direction: column;
   padding: 0 3rem 3rem 3rem;
-  width: 60%;
   text-align: justify;
+  margin-left: 20%;
+  max-width: 1200px;
 }
 
-main header {
+main h1 {
   text-align: center;
   margin-bottom: 1rem;
   font-size: 4rem;
@@ -90,14 +93,19 @@ ul {
   body {
     flex-direction: column;
   }
-
   #navbar {
     width: 100%;
+    height: auto;
+    position: fixed;
     max-width: 100%;
     padding: 1rem;
     flex-direction: row;
     flex-wrap: wrap;
   }
+  #navbar header {
+    display: none;
+  }
+
 
   #navbar div {
     width: 100%;
@@ -110,11 +118,13 @@ ul {
     width: 100%;
     padding: 0 1rem 1rem 1rem;
     text-align: left;
+    margin-left: 0;
   }
 
-  main header {
+  main h1 {
+  padding-top: 10rem;
     margin-bottom: 1rem;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 600;
   }
 }

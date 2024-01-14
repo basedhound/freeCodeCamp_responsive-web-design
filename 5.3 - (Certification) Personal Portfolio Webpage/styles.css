@@ -1,79 +1,289 @@
-/* Navbar Styles */
-
 * {
-   font-family: "Roboto", sans-serif
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+img {
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  color: whitesmoke;
+  background-color: #226b9e;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+h2 {
+  text-align: center;
+  font-size: 5rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+h3 {
+  text-align: center;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 400;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 #navbar {
   position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #333;
-  color: #fff;
-}
-
-#navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-#navbar ul li {
-  margin-right: 20px;
-}
-
-#navbar ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Welcome Section Styles */
-#welcome-section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #f2f2f2;
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: #181a1b;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 100%;
+  z-index: 99;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-right: 1.5rem;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+.nav-link:hover {
+  border-bottom: 1px solid white;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 3rem;
+  width: 100%;
+  padding: 5rem 2rem;
+}
+#welcome-section {
+  background-color: #164363;
+  height: 100vh;
 }
 
-/* Projects Section Styles */
-#projects {
-  padding: 50px;
+#contact {
+  background-color: #164363;
+}
+.projects {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 3rem;
+  width: 100%;
+  max-width: 1280px;
 }
 
 .project-tile {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #003049;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+  background: linear-gradient(to right, #348ac7, #7474bf);
+}
+.project-tile:hover {
+  scale: 1.05;
+}
+.project-tile a {
+  color: white;
 }
 
-/* Profile Link Styles */
-#profile-link {
-  display: block;
-  text-align: center;
-  margin-top: 50px;
-  color: #333;
+.project-img1 {
+  background-image: url("https://www.sketchappsources.com/resources/source-image/to-do-app-farianzum.png");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  border-radius: 10px 10px 0 0;
+}
+.project-img2 {
+  background-image: url("https://t3.ftcdn.net/jpg/04/91/54/18/360_F_491541875_c0vIhFwHnRZvmRfJELvJxtSQbRDOwbGC.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  border-radius: 10px 10px 0 0;
+}
+.project-img3 {
+  background-image: url("https://www.appstudio.ca/blog/wp-content/uploads/2022/04/Pro-Suggestions-for-the-Best-Expense-Tracker-Apps-for-Startups-in-2022.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  border-radius: 10px 10px 0 0;
+}
+.project-img4 {
+  background-image: url("https://www.instakotlin.com/wp-content/uploads/2019/02/kotlin-chat-cover-800x600.png");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  border-radius: 10px 10px 0 0;
+}
+.project-img5 {
+  background-image: url("https://limittimes.com/wp-content/uploads/2023/08/Snake-game-on-Google.png");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  border-radius: 10px 10px 0 0;
+}
+.project-img6 {
+  background-image: url("https://media.licdn.com/dms/image/D5612AQEI1A2vrCctJw/article-cover_image-shrink_720_1280/0/1692775246700?e=2147483647&v=beta&t=BusEnUw3QwHcdUNkX5f2aN94hmxvT8r6_zqHME8Aeo0");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  border-radius: 10px 10px 0 0;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  padding: 1.5rem 1rem;
+}
+
+/* Contact Section ==================== */
+.socials {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.socials a {
   text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  padding: 0.5rem 0;
 }
 
-/* Media Query */
-@media (max-width: 768px) {
-  /* Adjust styles for smaller screens */
-  #navbar ul li {
-    margin-right: 10px;
-  }
+.socials i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
 
-  #welcome-section {
-    height: 50vh;
-  }
+.socials a:hover {
+  border-bottom: 1px solid white;
+}
 
-  .project-tile {
-    padding: 10px;
-    margin-bottom: 10px;
-  }
+/* Footer ==================== */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #181a1b;
+  color: #fff;
+  font-size: 1.2rem;
+}
 
-  #profile-link {
-    margin-top: 20px;
+/* ===================== */
+
+@media screen and (max-width: 950px) {
+  main {
+    gap: 3rem;
+  }
+  .section {
+    padding: 1rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+.socials a {
+  text-decoration: none;
+  color: #fff;
+  /* font-size: 1.2rem; */
+}
+
+/* ===================== */
+
+@media screen and (max-width: 600px) {
+  #navbar {
+    padding: 0.5rem 1rem 1rem 1rem;
+    background-color: #181a1b;
+  }
+  .nav-link {
+    font-size: 1rem;
+    margin-right: 1rem;
+    border-bottom: 1px solid transparent;
+  }
+  .project {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #232323;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-link {
+    margin-right: 0.5rem;
+  }
+  #home {
+    margin-top: 5rem;
   }
 }
