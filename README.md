@@ -63,4 +63,3 @@ Enfin, vous apprendrez comment créer des pages web qui s'adaptent à différent
 2. Learn CSS Transforms by Building a Penguin
 3. (Certification) Personal Portfolio Webpage
 ```
-# freeCodeCamp_javascript-algorithms-and-data-structures
