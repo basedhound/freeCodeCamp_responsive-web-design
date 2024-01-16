@@ -43,7 +43,7 @@ Enfin, vous apprendrez comment créer des pages web qui s'adaptent à différent
 
 ```
 1. Learn More About CSS Pseudo Selectors By Building A Balance Sheet
-2. Learn Intermediate CSS by Building a Cat Painting, Not started
+2. Learn Intermediate CSS by Building a Cat Painting
 3. Learn Responsive Web Design by Building a Piano
 4. (Certification) Technical Documentation Page
 ```
@@ -63,3 +63,4 @@ Enfin, vous apprendrez comment créer des pages web qui s'adaptent à différent
 2. Learn CSS Transforms by Building a Penguin
 3. (Certification) Personal Portfolio Webpage
 ```
+# freeCodeCamp_javascript-algorithms-and-data-structures
