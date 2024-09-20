@@ -26,7 +26,7 @@ Enfin, vous apprendrez comment créer des pages web qui s'adaptent à différent
 2. Learn Basic CSS by Building a Cafe Menu
 3. Learn CSS Colors by Building a Set of Colored Markers
 4. Learn HTML Forms by Building a Registration Form
-5. (Certification) Survey Form
+5. 🎓 Survey Form
 ```
 
 ### Module 2
@@ -36,7 +36,7 @@ Enfin, vous apprendrez comment créer des pages web qui s'adaptent à différent
 2. Learn CSS Flexbox by Building a Photo Gallery
 3. Learn Typography by Building a Nutrition Label
 4. Learn Accessibility by Building a Quiz
-5. (Certification) Tribute Page
+5. 🎓 Tribute Page
 ```
 
 ### Module 3
@@ -45,7 +45,7 @@ Enfin, vous apprendrez comment créer des pages web qui s'adaptent à différent
 1. Learn More About CSS Pseudo Selectors By Building A Balance Sheet
 2. Learn Intermediate CSS by Building a Cat Painting
 3. Learn Responsive Web Design by Building a Piano
-4. (Certification) Technical Documentation Page
+4. 🎓 Technical Documentation Page
 ```
 
 ### Module 4
@@ -53,7 +53,7 @@ Enfin, vous apprendrez comment créer des pages web qui s'adaptent à différent
 ```
 1. Learn CSS Variables by Building a City Skyline
 2. Learn CSS Grid by Building a Magazine
-3. (Certification) Product Landing Page
+3. 🎓 Product Landing Page
 ```
 
 ### Module 5
@@ -61,5 +61,5 @@ Enfin, vous apprendrez comment créer des pages web qui s'adaptent à différent
 ```
 1. Learn CSS Animation by Building a Ferris Wheel
 2. Learn CSS Transforms by Building a Penguin
-3. (Certification) Personal Portfolio Webpage
+3. 🎓 Personal Portfolio Webpage
 ```
